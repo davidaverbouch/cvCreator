@@ -1,0 +1,10 @@
+.listItem {
+  padding: 1rem;
+  display: inline;
+  cursor: pointer;
+
+  &.selected a,
+  &:hover a {
+    color: var(--text-color-inverted);
+  }
+}

@@ -1,0 +1,33 @@
+.menu {
+  display: flex;
+  padding: 0 1rem;
+  background-color: var(--blue-tertiary);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+
+  & a,
+  & a.visited {
+    color: var(--gray-primary);
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.headerBlock {
+  height: 52px;
+}
+
+.links {
+  display: flex;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.list {
+  display: flex;
+  flex: 1;
+}

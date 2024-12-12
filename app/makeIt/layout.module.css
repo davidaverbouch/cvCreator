@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.left {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+}
+
+.right {
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  width: 450px;
+  background: white;
+  padding: 1rem;
+}

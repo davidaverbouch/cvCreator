@@ -1,0 +1,14 @@
+.aboutWrapper {
+  flex: 1;
+
+  & h1 {
+    text-align: center;
+  }
+}
+
+.about {
+  padding: 1rem;
+  display: flex;
+  flex: 1;
+  justify-content: baseline;
+}

@@ -1,0 +1,57 @@
+.inputWrapper {
+  position: relative;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+
+  & label {
+    position: absolute;
+    top: 1rem;
+    left: 0rem;
+    right: 0rem;
+    height: 1.75rem;
+    padding: 0 0.5rem;
+    line-height: 1.75;
+    transition: all 0.125s ease-in-out;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  & input {
+    height: 1.75rem;
+    padding: 0.5rem;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--gray-secondary);
+    outline: none;
+  }
+
+  &.inputFocused {
+    & label {
+      top: 0;
+      left: 0;
+      zoom: 66%;
+      padding: 0;
+      color: var(--blue-secondary);
+    }
+
+    & input {
+      border-bottom-color: var(--blue-secondary);
+    }
+  }
+
+  &.inputBlured {
+    & label {
+      color: var(--gray-secondary);
+    }
+  }
+
+  &:hover {
+    & label {
+      color: var(--blue-secondary);
+    }
+    & input {
+      border-bottom-color: var(--blue-secondary);
+    }
+  }
+}
