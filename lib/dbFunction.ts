@@ -17,13 +17,13 @@ export const insertWorkExperience = ({ year, duration, company_name, is_esn, esn
 };
 
 // Ajouter une expérience professionnelle
-export const insertSkills = ({ name, duration, level }: { name: number; duration: number; level: string }) => {
+export const insertSkills = ({ name, duration, level }: { name: string; duration: number; level: number }) => {
   return db.prepare(`INSERT INTO work_experience (name, duration, level) VALUES (?, ?, ?, ?, ?)`).run(name, duration, level).lastInsertRowid;
 };
 
 // Ajouter une personne en regroupant l'éducation et l'expérience professionnelle
-export const insertCV = ({ educationId, workExperienceId }: { educationId: number; workExperienceId: number }) => {
-  return db.prepare(` INSERT INTO cv (education_id, work_experience_id) VALUES (?, ?)`).run(educationId, workExperienceId);
+export const insertCV = ({ educationId, workExperienceId, skillId }: { educationId: number; workExperienceId: number; skillId: number }) => {
+  return db.prepare(` INSERT INTO cv (education_id, work_experience_id, skill_id) VALUES (?, ?, ?)`).run(educationId, workExperienceId, skillId);
 };
 
 // // Récupérer les compétences d'un CV spécifique
@@ -34,3 +34,30 @@ export const insertCV = ({ educationId, workExperienceId }: { educationId: numbe
 //   JOIN cv_skills cs ON cs.skill_id = s.id
 //   WHERE cs.cv_id = ?
 // `).all(cvId);
+
+// -- Associer les expériences professionnelles au CV
+// INSERT INTO cv_work_experience (cv_id, work_experience_id)
+// VALUES
+//   (SELECT id FROM cv WHERE education_id = (SELECT id FROM education WHERE school = 'UPMC' AND city = 'Paris')),
+//   (SELECT id FROM work_experience WHERE company_name = 'Capgemini');
+
+// INSERT INTO cv_work_experience (cv_id, work_experience_id)
+// VALUES
+//   (SELECT id FROM cv WHERE education_id = (SELECT id FROM education WHERE school = 'UPMC' AND city = 'Paris')),
+//   (SELECT id FROM work_experience WHERE company_name = 'Randstad');
+
+// -- Associer les compétences au CV
+// INSERT INTO cv_skills (cv_id, skills_id)
+// VALUES
+//   (SELECT id FROM cv WHERE education_id = (SELECT id FROM education WHERE school = 'UPMC' AND city = 'Paris')),
+//   (SELECT id FROM skills WHERE name = 'React');
+
+// INSERT INTO cv_skills (cv_id, skills_id)
+// VALUES
+//   (SELECT id FROM cv WHERE education_id = (SELECT id FROM education WHERE school = 'UPMC' AND city = 'Paris')),
+//   (SELECT id FROM skills WHERE name = 'Next.js');
+
+// INSERT INTO cv_skills (cv_id, skills_id)
+// VALUES
+//   (SELECT id FROM cv WHERE education_id = (SELECT id FROM education WHERE school = 'UPMC' AND city = 'Paris')),
+//   (SELECT id FROM skills WHERE name = 'Node.js');
