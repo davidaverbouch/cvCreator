@@ -16,7 +16,21 @@ export const insertWorkExperience = ({ year, duration, company_name, is_esn, esn
   return db.prepare(`INSERT INTO work_experience (year, duration, company_name, is_esn, esn_name) VALUES (?, ?, ?, ?, ?)`).run(year, duration, company_name, is_esn, esn_name).lastInsertRowid;
 };
 
+// Ajouter une expérience professionnelle
+export const insertSkills = ({ name, duration, level }: { name: number; duration: number; level: string }) => {
+  return db.prepare(`INSERT INTO work_experience (name, duration, level) VALUES (?, ?, ?, ?, ?)`).run(name, duration, level).lastInsertRowid;
+};
+
 // Ajouter une personne en regroupant l'éducation et l'expérience professionnelle
 export const insertCV = ({ educationId, workExperienceId }: { educationId: number; workExperienceId: number }) => {
   return db.prepare(` INSERT INTO cv (education_id, work_experience_id) VALUES (?, ?)`).run(educationId, workExperienceId);
 };
+
+// // Récupérer les compétences d'un CV spécifique
+// const cvId = 1; // Remplacez par l'ID du CV que vous voulez consulter
+// const skillsForCv = db.prepare(`
+//   SELECT s.name, s.duration, s.level
+//   FROM skills s
+//   JOIN cv_skills cs ON cs.skill_id = s.id
+//   WHERE cs.cv_id = ?
+// `).all(cvId);
