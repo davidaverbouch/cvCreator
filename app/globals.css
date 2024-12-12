@@ -1,14 +1,25 @@
 :root {
-  --background: #ffffff;
+  --background: rgb(230, 230, 230);
   --foreground: #171717;
+
+  --text-color: black;
+  --text-color-inverted: white;
+
+  --blue-primary: rgb(180, 235, 255);
+  --blue-secondary: rgb(0, 118, 186);
+  --blue-tertiary: rgb(0, 77, 128);
+
+  --gray-primary: var(--background);
+  --gray-secondary: rgb(140, 140, 140);
+  --gray-tertiary: rgb(30, 30, 30);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {
@@ -29,14 +40,9 @@ body {
   padding: 0;
   margin: 0;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+/* 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
