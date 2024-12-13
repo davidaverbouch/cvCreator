@@ -4,7 +4,7 @@ import { FormSubmit, Input, Textarea } from '@/components/form';
 import { useActionState } from 'react';
 import classes from './contactForm.module.css';
 
-const ContactForm = ({ action }: { action: (_prevState: any, formData: any) => void }) => {
+const ContactForm = ({ action }: { action: (_prevState: unknown, formData: FormData) => void }) => {
   const [state, formAction] = useActionState(action, null);
 
   return (
@@ -13,7 +13,7 @@ const ContactForm = ({ action }: { action: (_prevState: any, formData: any) => v
         <Input id="title" name="title" required label="title" />
         <Textarea id="content" name="content" required label="content" />
         <FormSubmit />
-        {state?.errors && <p>{state.errors}</p>}
+        {state?.error && <p>{state.error}</p>}
       </form>
     </div>
   );
