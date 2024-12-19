@@ -1,0 +1,12 @@
+.faceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid var(--blue-secondary);
+  background-color: var(--blue-secondary);
+  position: relative;
+  overflow: hidden;
+}

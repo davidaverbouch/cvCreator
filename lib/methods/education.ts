@@ -20,3 +20,9 @@ export const insertEducationIntoCV = ({ firstName, lastName, schoolName }: { fir
 
   return db.prepare(`INSERT INTO cv_education (cv_id, education_id) VALUES (?, ?)`).run(cvRow.id, educationRow.id);
 };
+
+export const addEducation = ({ firstName, lastName, year, duration, school, city }: { firstName: string; lastName: string; year: number; duration: number; school: string; city: string }) => {
+  const education = insertEducation({ year, duration, school, city });
+  insertEducationIntoCV({ firstName, lastName, schoolName: school });
+  return education;
+};

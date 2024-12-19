@@ -31,3 +31,10 @@
   display: flex;
   flex: 1;
 }
+
+@media print {
+  .menu,
+  .headerBlock {
+    display: none;
+  }
+}

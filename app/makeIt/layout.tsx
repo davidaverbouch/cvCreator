@@ -1,11 +1,11 @@
 import { ReactElement } from 'react';
 import classes from './layout.module.css';
 
-const ParallelsLayout = ({ first, second }: { first: ReactElement; second: ReactElement }) => {
+const ParallelsLayout = ({ cv, form }: { cv: ReactElement; form: ReactElement }) => {
   return (
     <main className={classes.main}>
-      <div className={classes.left}>{first}</div>
-      <div className={classes.right}>{second}</div>
+      <div className={classes.left}>{cv}</div>
+      <div className={classes.right}>{form}</div>
     </main>
   );
 };

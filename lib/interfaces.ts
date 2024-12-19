@@ -2,6 +2,10 @@ export interface CV {
   id: number;
   first_name: string;
   last_name: string;
+  face: string;
+  title: string;
+  description: string;
+  mindset: string;
 }
 
 export interface EntityId {
@@ -16,24 +20,55 @@ export interface Education {
 }
 
 export interface WorkExperience {
+  title: string;
   year: number;
   duration: number;
   company_name: string;
-  is_esn: boolean;
+  is_esn: number;
   esn_name: string | null;
 }
 
 export interface Skill {
+  category: string;
   name: string;
   duration: number;
   level: number;
+  is_main: number;
 }
 
 export interface UserCV {
   id: number;
   first_name: string;
   last_name: string;
-  education: Education[];
+  face: string;
+  title: string;
+  description: string;
+  mindset: string;
+  educations: Education[];
   workExperiences: WorkExperience[];
   skills: Skill[];
+}
+
+export interface User {
+  id: number;
+  sex: string;
+  firstName: string;
+  lastName: string;
+  birthday: Date;
+  phone: string;
+  email: string;
+  address: string;
+  driveLicence: string;
+}
+
+export interface UserDTO {
+  id: number;
+  sex: string;
+  first_name: string;
+  last_name: string;
+  birthday: number;
+  phone: string;
+  email: string;
+  address: string;
+  drive_licence: string;
 }

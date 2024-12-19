@@ -1,0 +1,19 @@
+.identityWrapper {
+  flex: 1;
+  display: grid;
+  background: var(--blue-primary);
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.block {
+  display: flex;
+  margin: 0.5rem 0;
+  gap: 1rem;
+}
+
+.icon {
+  min-width: 48px;
+  width: 48px;
+  border: 1px solid;
+}

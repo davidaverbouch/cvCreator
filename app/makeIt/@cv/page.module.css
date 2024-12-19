@@ -1,0 +1,36 @@
+.makeItWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.header {
+  display: flex;
+  gap: 2rem;
+  font-weight: 700;
+}
+
+.description,
+.skillsAndXp {
+  display: flex;
+  gap: 2rem;
+}
+
+.skillsAndEducation {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+.education {
+  padding: 0 0.5rem;
+}
+.skills {
+  padding: 1rem;
+  border: 1px solid var(--blue-secondary);
+}
+.xp {
+  flex: 1;
+  padding: 0 1rem;
+}

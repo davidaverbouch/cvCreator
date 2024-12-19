@@ -1,0 +1,35 @@
+.mainSkillsWrapper {
+  flex: 1;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.skillsWrapper {
+  display: flex;
+  gap: 2rem;
+
+  & h3 {
+    text-align: center;
+  }
+
+  & h3,
+  .progressWrapper {
+    flex: 1;
+  }
+}
+
+.progressWrapper {
+  border: 1px solid var(--blue-secondary);
+  background-color: var(--gray-primary);
+}
+
+.progression {
+  background-color: var(--blue-primary);
+  height: 100%;
+
+  &.incomplete {
+    border-right: 1px solid var(--blue-secondary);
+  }
+}

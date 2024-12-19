@@ -1,0 +1,9 @@
+.educationsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.educationItem {
+  color: var(--gray-secondary);
+}
