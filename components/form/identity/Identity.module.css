@@ -1,0 +1,5 @@
+.name {
+  display: grid;
+  grid-template-columns: 64px 1fr 1fr;
+  gap: 1rem;
+}

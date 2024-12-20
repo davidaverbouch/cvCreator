@@ -1,10 +1,11 @@
 'use client';
 
+import { Action } from '@/actions/interfaces';
 import { FormSubmit, Input, Textarea } from '@/components/form';
 import { useActionState } from 'react';
 import classes from './contactForm.module.css';
 
-const ContactForm = ({ action }: { action: (_prevState: unknown, formData: FormData) => void }) => {
+const ContactForm = ({ action }: Action) => {
   const [state, formAction] = useActionState(action, null);
 
   return (

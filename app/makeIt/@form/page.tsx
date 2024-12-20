@@ -1,17 +1,17 @@
 'use client';
 import { CreateCV } from '@/actions/addCv';
 
-const Second = () => {
+const CvForm = () => {
   const handleClick = async () => {
     await CreateCV();
   };
 
   return (
     <>
-      <h1>Second</h1>
+      <h1>CvForm</h1>
       <button onClick={handleClick}>Add cv of David</button>
     </>
   );
 };
 
-export default Second;
+export default CvForm;

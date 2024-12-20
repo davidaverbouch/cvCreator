@@ -1,1 +1,1 @@
-export { default as Textarea } from './Textaea';
+export { default as Textarea } from './Textarea';

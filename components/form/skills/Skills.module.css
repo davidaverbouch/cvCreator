@@ -1,0 +1,5 @@
+.skill {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr 42px;
+  gap: 1rem;
+}
