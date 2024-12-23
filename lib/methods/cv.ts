@@ -26,7 +26,21 @@ export const getUserCV = (firstName: string, lastName: string): UserCV | undefin
 };
 
 // Ajouter une personne en regroupant l'éducation et l'expérience professionnelle
-export const insertCV = ({ firstName, lastName, face, title, description, mindset }: { firstName: string; lastName: string; face: string; title: string; description: string; mindset: string }) => {
+export const insertCV = ({
+  firstName,
+  lastName,
+  face,
+  title,
+  description,
+  mindset,
+}: {
+  firstName: string;
+  lastName: string;
+  face: string;
+  title: string;
+  description: string;
+  mindset: string;
+}) => {
   const user = getUser({ firstName, lastName });
   if (!user) throw new Error(`no user for ${firstName} ${lastName}`);
 
@@ -34,7 +48,9 @@ export const insertCV = ({ firstName, lastName, face, title, description, mindse
   if (existingCV) throw new Error(`CV for ${firstName} ${lastName} already exists.`);
 
   // insert into cv
-  const cv = db.prepare(`INSERT INTO cv (first_name, last_name, face, title, description, mindset) VALUES (?, ?, ?, ?, ?, ?)`).run(firstName, lastName, face, title, description, mindset);
+  const cv = db
+    .prepare(`INSERT INTO cv (first_name, last_name, face, title, description, mindset) VALUES (?, ?, ?, ?, ?, ?)`)
+    .run(firstName, lastName, face, title, description, mindset);
   const cvId = cv.lastInsertRowid;
 
   // insert into user

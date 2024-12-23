@@ -1,5 +1,18 @@
-.skill {
-  display: grid;
-  grid-template-columns: 90px 1fr 1fr 42px;
-  gap: 1rem;
+.skillWrapper {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  padding-bottom: 50px;
+  flex: 1;
+
+  & hr {
+    border: none;
+    border-left: 1px solid var(--blue-secondary);
+  }
+}
+
+.skillContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

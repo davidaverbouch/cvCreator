@@ -1,5 +1,8 @@
 import { UpsertIdentity } from '@/actions/upsertIdentity';
+import { UpsertSkill } from '@/actions/upsertSkill';
 import { Identity, Skills } from '@/components/form';
+import { defaultCV } from '@/lib/defaultValues/cv';
+import { getUserCV } from '@/lib/methods/cv';
 import React from 'react';
 import classes from './page.module.css';
 
@@ -17,15 +20,18 @@ enum FormPartEnum {
 
 const FormPart: React.FC<FormPartProps> = async ({ params }) => {
   const formPart = (await params).formPart;
-  console.log({ formPart });
+  const userCV = getUserCV('David', 'Averbouch') ?? defaultCV;
+
   return (
     <div className={classes.fromPartWrapper}>
       <div className={classes.overlay} />
       <div className={classes.modal}>
-        <h1>modification of {formPart}</h1>
+        <div className={classes.titlewrapper}>
+          <h1>{formPart}</h1>
+        </div>
 
         {formPart === FormPartEnum.Identity && <Identity action={UpsertIdentity} />}
-        {formPart === FormPartEnum.Skills && <Skills action={UpsertIdentity} />}
+        {formPart === FormPartEnum.Skills && <Skills action={UpsertSkill} datas={userCV.skills} />}
       </div>
     </div>
   );

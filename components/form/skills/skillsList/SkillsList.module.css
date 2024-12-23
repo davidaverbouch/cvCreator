@@ -1,0 +1,12 @@
+.skillList {
+  overflow: auto;
+  max-height: 50vh;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 1fr 1fr 30px;
+  gap: 1rem;
+  flex: 1;
+  align-items: center;
+}

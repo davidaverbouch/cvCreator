@@ -1,17 +1,14 @@
 'use client';
 import { CreateCV } from '@/actions/addCv';
+import { Button } from '@/components/button';
+import AddIcon from '@mui/icons-material/Add';
 
 const CvForm = () => {
   const handleClick = async () => {
     await CreateCV();
   };
 
-  return (
-    <>
-      <h1>CvForm</h1>
-      <button onClick={handleClick}>Add cv of David</button>
-    </>
-  );
+  return <Button icon={<AddIcon />} onClick={handleClick} />;
 };
 
 export default CvForm;

@@ -1,0 +1,25 @@
+.categorySkillList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+
+  & li {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid var(--blue-secondary);
+
+    & button {
+      background-color: transparent;
+      padding: 0.5rem;
+      border: none;
+      cursor: pointer;
+      flex: 1;
+      display: flex;
+
+      &:hover {
+        color: var(--blue-secondary);
+      }
+    }
+  }
+}

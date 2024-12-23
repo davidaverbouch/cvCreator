@@ -1,8 +1,21 @@
+.skillsEditing {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: none;
+}
+
 .skillsBlockWrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+
+  &:hover .skillsEditing {
+    display: block;
+  }
 }
+
 .skillsWrapper {
   color: var(--blue-secondary);
 }

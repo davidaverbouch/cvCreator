@@ -4,6 +4,18 @@
   background: var(--blue-primary);
   border-radius: 4px;
   padding: 2rem;
+  position: relative;
+
+  &:hover .identityEditing {
+    display: block;
+  }
+}
+
+.identityEditing {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: none;
 }
 
 .block {

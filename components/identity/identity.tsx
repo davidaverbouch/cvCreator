@@ -1,10 +1,14 @@
 import { User } from '@/lib/interfaces';
 import { FC } from 'react';
 import classes from './identity.module.css';
+import { IdentityEdition } from './identityEdition';
 
 const Identity: FC<User> = ({ sex, firstName, lastName, birthday, phone, email, address, driveLicence }) => {
   return (
     <div className={classes.identityWrapper}>
+      <div className={classes.identityEditing}>
+        <IdentityEdition />
+      </div>
       <div className={classes.block}>
         <div className={classes.icon} />
         <div>

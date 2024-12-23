@@ -1,26 +1,47 @@
 'use client';
 
 import { Action } from '@/actions/interfaces';
-import React, { useActionState } from 'react';
-import { Checkbox } from '../checkbox';
-import { FormSubmit } from '../formSubmit';
-import { Input } from '../input';
+import { Skill } from '@/lib/interfaces';
+import { FC } from 'react';
+import { CategoryList } from './categoryList';
+import { Footer } from './footer';
+import { NewItem } from './newItem';
 import classes from './Skills.module.css';
+import { SkillsList } from './skillsList';
+import { useSkills } from './useSkills';
 
-const Skills: React.FC<Action> = ({ action }) => {
-  const [state, formAction] = useActionState(action, undefined);
+const Skills: FC<Action & { datas: Skill[] }> = ({ action, datas }) => {
+  const {
+    formAction,
+    newCategory,
+    setNewCategory,
+    newSkill,
+    setNewSkill,
+    skills,
+    currentCategory,
+    handleSelectCategory,
+    handleAddCategory,
+    handleAddSkill,
+    handleUpdateSkill,
+  } = useSkills({ action, datas });
 
-  console.log({ state });
   return (
-    <form action={formAction}>
-      <div className={classes.skill}>
-        <Input type="text" name="category" label="category" />
-        <Input type="text" name="name" label="name" />
-        <Input type="text" name="level" label="level" />
-        <Checkbox name="is_main" label="main" />
+    <div className={classes.skillWrapper}>
+      <CategoryList
+        skills={skills}
+        newCategory={newCategory}
+        setNewCategory={setNewCategory}
+        handleSelectCategory={handleSelectCategory}
+        handleAddCategory={handleAddCategory}
+      />
+      <hr />
+      <div className={classes.skillContainer}>
+        <h2>{currentCategory}</h2>
+        <SkillsList skills={skills} currentCategory={currentCategory} handleUpdateSkill={handleUpdateSkill} />
+        <NewItem newSkill={newSkill} setNewSkill={setNewSkill} handleAddSkill={handleAddSkill} />
       </div>
-      <FormSubmit />
-    </form>
+      <Footer skills={skills} formAction={formAction} />
+    </div>
   );
 };
 

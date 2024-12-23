@@ -1,0 +1,16 @@
+.skillNewItem {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blue-primary);
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.skillToAdd {
+  display: grid;
+  grid-template-columns: 1fr 1fr 30px;
+  gap: 1rem;
+  flex: 1;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 30px 42px;
+}

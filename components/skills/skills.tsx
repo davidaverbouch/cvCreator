@@ -1,12 +1,16 @@
+import { useCategorizeSkills } from '@/app/hooks/useSkills';
 import { Skill } from '@/lib/interfaces';
+import { SkillEdition } from './skillEdition';
 import classes from './skills.module.css';
-import { useSkills } from './useSkills';
 
 const Skills = ({ skills }: { skills: Skill[] }) => {
-  const skillsAdapted = useSkills({ skills });
+  const skillsAdapted = useCategorizeSkills({ skills });
 
   return (
     <div className={classes.skillsBlockWrapper}>
+      <div className={classes.skillsEditing}>
+        <SkillEdition />
+      </div>
       {Object.entries(skillsAdapted).map(([category, skillsCategorized]) => (
         <div key={category}>
           <h2>{category}</h2>

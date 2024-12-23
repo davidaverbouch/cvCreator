@@ -1,15 +1,12 @@
 'use client';
 
+import { Button } from '@/components/button';
+import { Ref } from 'react';
 import { useFormStatus } from 'react-dom';
-import classes from './formSubmit.module.css';
 
-const FormSubmit = () => {
+const FormSubmit = ({ ref }: { ref?: Ref<HTMLButtonElement> }) => {
   const status = useFormStatus();
-  return (
-    <button className={classes.submitBtn} disabled={status.pending} type="submit">
-      submit
-    </button>
-  );
+  return <Button ref={ref} label="submit" disabled={status.pending} type="submit" />;
 };
 
 export default FormSubmit;

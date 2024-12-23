@@ -26,9 +26,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1100;
-  width: 500px;
+  width: 750px;
   border: 2px solid var(--blue-secondary);
   border-radius: 1rem;
   background: white;
   padding: 1rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.titlewrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }

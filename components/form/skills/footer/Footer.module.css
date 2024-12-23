@@ -1,0 +1,17 @@
+.skillFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: white;
+  padding-top: 1rem;
+  border-top: 1px solid var(--blue-secondary);
+
+  & form {
+    flex: 1;
+    gap: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

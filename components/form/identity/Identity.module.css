@@ -1,5 +1,36 @@
-.name {
+.duo {
   display: grid;
-  grid-template-columns: 64px 1fr 1fr;
+  grid-template-columns: 1fr 140px;
   gap: 1rem;
+}
+
+.trio {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr;
+  gap: 1rem;
+}
+
+.identityWrapper {
+  position: relative;
+  padding-bottom: 50px;
+  flex: 1;
+}
+
+.identityContainer {
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.identityFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: white;
+  padding-top: 1rem;
+  border-top: 1px solid var(--blue-secondary);
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
 }

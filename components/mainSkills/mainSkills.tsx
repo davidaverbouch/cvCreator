@@ -11,7 +11,10 @@ const MainSkills = ({ skills }: { skills: Skill[] }) => {
         <div className={classes.skillsWrapper} key={skill.name}>
           <h3>{skill.name}</h3>
           <div className={classes.progressWrapper}>
-            <div className={`${classes.progression} ${skill.level < 10 ? classes.incomplete : ''}`} style={{ width: `calc(100% * ${skill.level / 10})` }} />
+            <div
+              className={`${classes.progression} ${skill.level < 10 ? classes.incomplete : ''}`}
+              style={{ width: `calc(100% * ${skill.level / 10})` }}
+            />
           </div>
         </div>
       ))}
