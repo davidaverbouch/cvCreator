@@ -1,0 +1,35 @@
+.companyWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.company {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+
+  .companyName {
+    flex: 1;
+  }
+
+  .esn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: transparent;
+  }
+
+  &.esnVisible .esn {
+    background-color: var(--gray-primary);
+  }
+}
+
+.title {
+  display: grid;
+  grid-template-columns: 1fr 90px 90px;
+  gap: 1rem;
+  align-items: center;
+}

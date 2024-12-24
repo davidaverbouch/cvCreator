@@ -1,1 +1,1 @@
-export { default as Identity } from './Identity';
+export { default as EditIdentity } from './Identity';

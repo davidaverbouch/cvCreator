@@ -1,4 +1,4 @@
-import { SelectableLink } from '../selectableLink';
+import { SelectableLink } from '@/atoms';
 import classes from './header.module.css';
 
 const Header = () => {

@@ -1,3 +1,4 @@
+import { v7 } from 'uuid';
 import { CV, UserCV } from '../interfaces';
 import { db } from '../utils';
 import { educationForCv } from './education';
@@ -41,6 +42,7 @@ export const insertCV = ({
   description: string;
   mindset: string;
 }) => {
+  console.log(v7());
   const user = getUser({ firstName, lastName });
   if (!user) throw new Error(`no user for ${firstName} ${lastName}`);
 

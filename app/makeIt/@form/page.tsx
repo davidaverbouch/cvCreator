@@ -1,6 +1,6 @@
 'use client';
 import { CreateCV } from '@/actions/addCv';
-import { Button } from '@/components/button';
+import { Button } from '@/atoms';
 import AddIcon from '@mui/icons-material/Add';
 
 const CvForm = () => {

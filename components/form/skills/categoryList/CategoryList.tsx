@@ -1,5 +1,5 @@
-import { Button } from '@/components/button';
-import { Input } from '@/components/form/input';
+import { Button } from '@/atoms';
+import { Input } from '@/atoms/form/input';
 import { Skill } from '@/lib/interfaces';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import { FC, MouseEvent, SetStateAction } from 'react';

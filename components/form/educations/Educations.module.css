@@ -1,0 +1,24 @@
+.educationsWrapper {
+  position: relative;
+  padding-bottom: 50px;
+  flex: 1;
+}
+
+.educationsContainer {
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.educationsFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: white;
+  padding-top: 1rem;
+  border-top: 1px solid var(--blue-secondary);
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}

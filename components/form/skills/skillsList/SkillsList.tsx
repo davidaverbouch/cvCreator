@@ -1,7 +1,7 @@
-import { Input } from '@/components/form/input';
+import { Input } from '@/atoms/form/input';
 import { Skill } from '@/lib/interfaces';
 import { FC } from 'react';
-import { Checkbox } from '../../checkbox';
+import { Checkbox } from '../../../../atoms/form/checkbox';
 import classes from './SkillsList.module.css';
 
 interface SkillsListProps {

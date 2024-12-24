@@ -1,14 +1,19 @@
-import { Description, Educations, Face, Identity, MainSkills, Skills } from '@/components';
-import { WorkExperiences } from '@/components/workExperiences';
+import { Description, Educations, Face, Identity, MainSkills, Skills, WorkExperiences } from '@/components';
 import classes from './page.module.css';
 import { useGetCV } from './useGetCV';
+import { UserEdition } from './userEdition';
 
 const First = () => {
   const { cv, user } = useGetCV();
 
   return (
     <div className={classes.makeItWrapper}>
-      <h1>{cv.title}</h1>
+      <h1>
+        <div className={classes.userEditing}>
+          <UserEdition />
+        </div>
+        {cv.title}
+      </h1>
       <div className={classes.header}>
         <MainSkills skills={cv.skills} />
         <Identity {...user} />
@@ -16,6 +21,9 @@ const First = () => {
       <div className={classes.description}>
         <Face face={cv.face} />
         <Description description={cv.description} mindset={cv.mindset} />
+        <div className={classes.userEditing}>
+          <UserEdition />
+        </div>
       </div>
       <div className={classes.skillsAndXp}>
         <div className={classes.skillsAndEducation}>

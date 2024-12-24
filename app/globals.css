@@ -12,6 +12,8 @@
   --gray-primary: var(--background);
   --gray-secondary: rgb(140, 140, 140);
   --gray-tertiary: rgb(30, 30, 30);
+
+  --error: red;
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -1,0 +1,40 @@
+.userWrapper {
+  position: relative;
+  padding-bottom: 50px;
+  flex: 1;
+}
+
+.userContainer {
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.userFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: white;
+  padding-top: 1rem;
+  border-top: 1px solid var(--blue-secondary);
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.duo {
+  display: flex;
+  gap: 2rem;
+}
+
+.faceWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.descriptionWrapper {
+  flex: 1;
+  padding: 0 3rem;
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import { Action } from '@/actions/interfaces';
-import { FormSubmit, Input, Textarea } from '@/components/form';
+import { Input, Submit, Textarea } from '@/atoms';
 import { useActionState } from 'react';
 import classes from './contactForm.module.css';
 
@@ -13,7 +13,7 @@ const ContactForm = ({ action }: Action) => {
       <form action={formAction}>
         <Input id="title" name="title" required label="title" />
         <Textarea id="content" name="content" required label="content" />
-        <FormSubmit />
+        <Submit />
         {state?.error && <p>{state.error}</p>}
       </form>
     </div>

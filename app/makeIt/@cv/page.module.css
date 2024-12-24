@@ -1,3 +1,19 @@
+.userEditing {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: none;
+}
+
+.makeItWrapper h1,
+.description {
+  position: relative;
+
+  &:hover .userEditing {
+    display: block;
+  }
+}
+
 .makeItWrapper {
   display: flex;
   flex-direction: column;
@@ -23,13 +39,16 @@
   gap: 2rem;
   flex: 1;
 }
+
 .education {
   padding: 0 0.5rem;
 }
+
 .skills {
   padding: 1rem;
   border: 1px solid var(--blue-secondary);
 }
+
 .xp {
   flex: 1;
   padding: 0 1rem;

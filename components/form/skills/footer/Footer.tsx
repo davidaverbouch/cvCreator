@@ -1,7 +1,6 @@
+import { CancelBtn, Submit } from '@/atoms';
 import { Skill } from '@/lib/interfaces';
 import { FC, Fragment } from 'react';
-import { FormCancel } from '../../formCancel';
-import { FormSubmit } from '../../formSubmit';
 import classes from './Footer.module.css';
 
 const Footer: FC<{
@@ -21,12 +20,8 @@ const Footer: FC<{
               <input type="hidden" name={`${index}.is_main`} value={skill.is_main} />
             </Fragment>
           ))}
-        <div>
-          <FormCancel />
-        </div>
-        <div>
-          <FormSubmit />
-        </div>
+        <CancelBtn />
+        <Submit />
       </form>
     </div>
   );
